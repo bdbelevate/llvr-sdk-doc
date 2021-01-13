@@ -13,7 +13,7 @@
 
 ```js
 {
-    num_items: 5, // the total number of playlists if you need to paginate
+    numItems: 5, // the total number of playlists if you need to paginate
     start: 0, // echoes back the start number you sent
     limit: 10, // echoes back the limit that you sent
     results: [
@@ -26,14 +26,14 @@
             name: "featured_playlist", 
             // user displayed name
             title: "Featured", 
-            // content_url is the link to the list of ALL content in this playlist
-            content_url: "https://api.domain.com/video-content/{app_id}/playlists/789fa739-31a6-4a4d-99df-06460b2300cc", 
+            // contentUrl is the link to the list of ALL content in this playlist
+            contentUrl: "https://api.domain.com/video-content/{app_id}/playlists/789fa739-31a6-4a4d-99df-06460b2300cc", 
             // timestamp when the playlist itself was last modified, will represent latest last modified of tags or if the playlist itself was changed
-            last_modified: 1608754727,
+            lastModified: 1608754727,
             // number of total items in the playlist
-            num_items: 64,
+            numItems: 64,
             // list of number of tags and the number of items in each playlist, this is not paginated
-            category_results: [
+            categoryResults: [
                 {
                     id: "1234",
                     // cms defined name, not for user display
@@ -41,28 +41,28 @@
                     // user friendly name
                     title: "Basketball",
                     // number of items
-                    num_items: 21,
+                    numItems: 21,
                     // Unix timestamp of when last modified
-                    last_modified: 1608754659,
+                    lastModified: 1608754659,
                     // link to content of this category
-                    content_url: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=basketball"
+                    contentUrl: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=basketball"
                 },
                 {
                     id: "1234",
                     name: "gymnastics", 
                     title: "Gymnastics",
-                    num_items: 11,
-                    last_modified: 1608754659,
-                    content_url: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=gymnastics"
+                    numItems: 11,
+                    lastModified: 1608754659,
+                    contentUrl: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=gymnastics"
                 },
                 // empty categoryNames may be listed
                 {
                     id: "1234",
                     name: "football", 
                     title: "Gymnastics",
-                    num_items: 0,
-                    last_modified: 0,
-                    content_url: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=football"
+                    numItems: 0,
+                    lastModified: 0,
+                    contentUrl: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=football"
                 },
                 ...
             }]
@@ -72,17 +72,17 @@
             type: "Playlist",
             name: "library_content", 
             title: "Library", 
-            content_url: "https://api.domain.com/video-content/{app_id}/playlists/c42a1d01-a0f8-4d2e-b3df-1cf354d46660", 
-            last_modified: 1608754727,
-            num_items: 32,
+            contentUrl: "https://api.domain.com/video-content/{app_id}/playlists/c42a1d01-a0f8-4d2e-b3df-1cf354d46660", 
+            lastModified: 1608754727,
+            numItems: 32,
             categoryNames: [
                 {
                     id: "1234",
                     name: "basketball", 
                     title: "Basketball",
-                    num_items: 21,
-                    last_modified: 1608754659,
-                    content_url: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=basketball"
+                    numItems: 21,
+                    lastModified: 1608754659,
+                    contentUrl: "https://api.domain.com/video-content/{app_id}/playlists/{playlist_id}?categoryNames=basketball"
                 },
                 ...
             }]
@@ -106,7 +106,7 @@
 
 ```js
 {
-    num_items: 23, // the total number of results if you need to paginate
+    numItems: 23, // the total number of results if you need to paginate
     start: 0, // echoes back the start number you sent
     limit: 10, // echoes back the limit that you sent
     results: [
@@ -114,7 +114,9 @@
             // id of the content item
             id: "dd52c217-870a-46f1-82a7-b8bd0de9d14f",
             // content type
-            program_type: "SPORTS", // ESPORTS, MUSIC, FILM
+            programType: "Sports", // Esports, Music, Film
+            // program state
+            programState: "Live",
             // non user friendly name
             name: "Tottenham vs Arsenal 12/1/2020 - test",
             // user displayed name
@@ -127,14 +129,14 @@
             images: [
                 width: 100,
                 height: 100,
-                ratio: "SIXTEEN_NINE", // "FOUR_THREE", "THREE_TWO", "OTHER"
-                orientation: "LANDSCAPE", // "PORTRAIT",
+                ratio: "SixteenNine", // "FourThree", "ThreeTwo", "Other"
+                orientation: "Landscape", // "Portrait",
                 tags: ["thumbnail", "other"],
                 url: "http://someurl"
             ],
             performers: [
                 {
-                    performer_type: "INDIVIDUAL", // "GROUP"
+                    performerType: "Individual", // "Group"
                     name: "Some name",
                     role: "Away Team", // actor, director, etc...
                 },
@@ -142,9 +144,9 @@
             ],
             categoryNames: ["football", "gymnastics"],
             assets_count: {
-                "LIVE": 4, // there are four POV's
-                "CLIP": 2,
-                "ON_DEMAND": 4 // four 
+                "Live": 4, // there are four POV's
+                "Clip": 2,
+                "OnDemand": 4 // four 
             },
             assets_url: "https://api.domain.com/video-content/{app_id}/assets/dd52c217-870a-46f1-82a7-b8bd0de9d14f"
         }
@@ -167,7 +169,7 @@ Returns all of the assets for the video program
 
 ```js
 {
-    num_items: 5,
+    numItems: 5,
     start: 0,
     limit: 10,
     results: [
@@ -181,20 +183,23 @@ Returns all of the assets for the video program
             title: "POV 1 - Side",
             // description
             description: "The description of this asset",
-            // LIVE, ON_DEMAND, CLIP
-            asset_type: "LIVE",
-            // HLS_H264_AVC, HLS_H265_HEVC
-            codec: "HLS_H264_AVC",
-            // FLAT, EQUIRECTANGULAR 
-            format: "FLAT",
-            // MONOSCOPIC, STEREOSCOPIC_TOP_BOTTOM, STEREOSCOPIC_LEFT_RIGHT
-            dimensions: "MONOSCOPIC",
-            // ONE_EIGHTY, THREE_SIXTY
-            field_of_view: "ONE_EIGHTY",
-            requires_auth: true,
-            content_flags: ["test", "thing"],
-            // NONE, WIDEVINE, FAIRPLAY
-            drm: "NONE"
+            // Live, OnDemand, Clip
+            assetType: "Live",
+            // start and end
+            startTime: 1610552000,
+            endTime: 1610556000,
+            // HlsH264Avc, HLS_H265_HEVC
+            codec: "HlsH264Avc",
+            // Flat, Equirectangular 
+            format: "Flat",
+            // Monoscopic, StereoscopicTopBottom, StereoscopicLeftRight
+            dimensions: "Monoscopic",
+            // OneEighty, ThreeSixty
+            fieldOfView: "OneEighty",
+            requiresAuth: true,
+            contentFlags: ["test", "thing"],
+            // None, Widevine, Fairplay
+            drm: "None"
         },
         {
             id: "12346",
@@ -202,16 +207,18 @@ Returns all of the assets for the video program
             name: "POV 1",
             title: "POV 1 - Side",
             description: "The description of this asset",
-            asset_type: "LIVE",
-            codec: "HLS_H264_AVC",
-            format: "FLAT",
-            dimensions: "MONOSCOPIC",
-            field_of_view: "ONE_EIGHTY",
-            requires_auth: true,
-            content_flags: ["test", "thing"],
+            assetType: "Live",
+            startTime: 1610552000,
+            endTime: 1610556000,
+            codec: "HlsH264Avc",
+            format: "Flat",
+            dimensions: "Monoscopic",
+            fieldOfView: "OneEighty",
+            requiresAuth: true,
+            contentFlags: ["test", "thing"],
             width: 1280,
             height: 1060,
-            drm: "NONE"
+            drm: "None"
         },
         ...
     ]
